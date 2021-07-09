@@ -47,7 +47,7 @@ function Auth(props) {
     }
 
     async function registration() {
-        const data = await request("/api/registr");
+        const data = await request("https://word-study-server.herokuapp.com/api/registr");
         if (data) {
             setResponse(`${data.message}, нажмите войти чтобы перейти на главную`)
         }
@@ -55,7 +55,7 @@ function Auth(props) {
     }
 
     async function login() {
-        const data = await request("/api/login");
+        const data = await request("https://word-study-server.herokuapp.com/api/login");
         if (data) {
             props.setToken(data.token);
             localStorage.setItem("UserToken", data.token);
@@ -89,7 +89,7 @@ function Auth(props) {
                             type="password"
                             placeholder="введите пароль" 
                         />
-                        
+
                         <div>
                             <button onClick={registration}>зарегистрироваться</button>
                             <button onClick={login}>войти</button>
