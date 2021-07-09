@@ -1,0 +1,429 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* ============================================== */
+/* Auth page */
+.Auth {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 70px;
+    padding: 15px 50px;
+    background-color: rgb(219, 212, 178);
+    border: 1px solid;
+    border-radius: 5px;
+    
+}
+.Auth div{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0 0 0;
+}
+
+.responseModal{
+    position: absolute;
+    top: 210px;
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 3px;
+}
+.Error{
+    background: rgba(255, 0, 0, 0.315);
+}
+.Response{
+    background: rgba(0, 255, 34, 0.336);
+}
+
+
+/* ==================================================================== */
+/* exit */
+.Exit{
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.158);
+    color: white;
+    padding: 3px 50px 3px 0;
+    position: absolute;
+    width: 100%;
+}
+
+
+
+
+/* ======================================================================= */
+.Main{
+    font-family: -apple-system,BlinkMacSystemFont,
+        Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,
+        Fira Sans,Droid Sans,Helvetica Neue,sans-serif;;
+    max-width: 800px;
+    min-width: 500px;
+    margin: 0 auto;
+    padding: 50px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+/* ========================================
+ MENU */
+ 
+li{
+    list-style: none;
+}
+
+input{
+    border: none;
+    background: none;
+    outline: none;
+    border-bottom: 2px solid;
+    margin-bottom: 7px;
+    width: 100%;
+}
+
+button{
+    border: none;
+    background: none;
+    border-radius: 2px;
+    padding: 3px 5px;
+    box-shadow: 1px 1px 1.5px ;
+    transition: all 0.1s ease 0s;
+}
+button:hover{
+    box-shadow: none;
+    transform: translate(1px, 1px);
+}
+
+textarea{
+    border: none;
+    background: rgb(255, 208, 0);
+    padding: 8px 5px;
+    outline: none;
+    border-bottom: 2px solid;
+    resize: none;
+    margin-bottom: 7px;
+    width: 100%;
+}
+
+
+input[type=radio] {
+    display: none;
+}
+
+label>div{
+    width: 100%;
+    margin: 3px 0;
+    padding: 1px 20px;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+label>div:hover{
+    background: rgb(248, 252, 3);
+    
+}
+input[type=radio]:checked ~ div{
+    border-radius: 3px;
+    box-shadow: 0 0 10px 2px;
+}
+.Modal{
+    width: 180px;
+    position: absolute;
+    top: 35px;
+    background-color: rgba(251, 255, 0, 0.808);
+    padding: 10px 5px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+.Modal p{
+    margin-top: -3px;
+    
+}
+
+.modal-button-container{
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.Menu-container{
+    position: relative;
+    width: 90%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+}
+
+.Menu{
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(89, 148, 133);
+    border-radius: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 3px 3px 10px;
+    z-index: 999;
+}
+.Menu-scroll{
+    background-color: rgb(110, 110, 110);
+    position: fixed;
+    max-width: 702px;
+    min-width: 432px;
+    left: 50%;
+    
+    transition: all 0.4s;
+    
+}
+.scroll-up{
+    top: 0px;
+}
+.scroll-down{
+    top: -30px;
+}
+
+
+.last-menu-item{
+    display: flex;
+    justify-content: center;
+    
+}
+.Menu-item{
+    cursor: pointer;
+    color: gold;
+    text-align: center;
+}
+.Menu-item :first-child{
+    transition: all .3s;
+}
+.Menu-item:hover :first-child{
+    transform: translate(0, 3px);
+}
+
+.group-list{
+    max-height: 190px;
+    overflow: auto;
+    padding: 3px 0  ;
+}
+
+
+
+
+/* =========================================
+ BODY */
+
+.Body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
+    background: rgb(89, 153, 139);
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px;
+    user-select: none;
+}
+
+
+.Item{
+    margin: 10px 10px;
+    padding: 5px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    /* background-color: gold; */
+    border: 2px solid gold;
+    cursor: pointer;
+    color: gold;
+    box-shadow: 3px 3px 5px;
+    transition: all 0.2s;
+}
+.Item:hover{
+    transform: translate(2px, 2px);
+    box-shadow: none;
+    
+}
+.Item p{
+    color: rgb(0, 0, 243);
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px
+}
+.Item img{
+    height: 100px;
+    border-radius: 10px;
+}
+
+
+.img-container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.word-container{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+/* =================================================================
+context menu */
+
+.Context-menu{
+    position: absolute; 
+    padding: 10px 5px;
+    border-radius: 5px;
+    background: rgba(233, 231, 231, 0.836);   
+    color: black;
+    z-index: 1001;
+}
+.Context-menu li{
+    width: 140px;
+    padding: 2px 20px;
+    cursor: pointer;
+}
+.Context-menu li:hover {
+    background: rgb(233, 233, 233);
+}
+
+.sub-context-menu{
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgba(233, 231, 231, 0.836);
+    z-index: 1000;
+}
+.sub-context-menu>div{  
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 3px;
+}
+
+
+.Delete{
+    position: absolute;
+}
+.Delete>div{
+    position: relative;
+    bottom: 110px;
+}
+
+
+
+.Delete-few{
+    position: absolute;
+    z-index: 1000;
+}
+.Delete-few>div{
+    position: fixed;
+    top: 120px;
+}
+
+.Delete-group{
+    position: fixed;
+    left: 70%;
+    top: 120px;
+    z-index: 1000;
+}
+
+
+/* =========================================================== */
+@media (max-width: 510px) {
+    .Main{
+        min-width: 390px;
+    }
+    .Menu-item{
+        font-size: 12px;
+    }
+    .Modal{
+        width: 150px;
+    }
+}
+
+
+/* ======================================================== 
+loader...*/
+
+.loader{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 127px; 
+}
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgba(89, 153, 139, 0.637);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+  
