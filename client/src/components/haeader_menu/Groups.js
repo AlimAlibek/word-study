@@ -17,7 +17,7 @@ function Groups(props) {
                         ?
                           groupNames.map(groupName => {
                             return <li  key={groupName}>
-                                <label>
+                                <label className="group-name">
                                     <input 
                                       type="radio" 
                                       name="group" 

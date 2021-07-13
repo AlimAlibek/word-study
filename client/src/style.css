@@ -75,7 +75,7 @@
 /* ========================================
  MENU */
  
-li{
+ li{
     list-style: none;
 }
 
@@ -86,6 +86,7 @@ input{
     border-bottom: 2px solid;
     margin-bottom: 7px;
     width: 100%;
+    font-size: 14px;
 }
 
 button{
@@ -101,23 +102,63 @@ button:hover{
     transform: translate(1px, 1px);
 }
 
-textarea{
-    border: none;
-    background: rgb(255, 208, 0);
-    padding: 8px 5px;
-    outline: none;
-    border-bottom: 2px solid;
-    resize: none;
-    margin-bottom: 7px;
-    width: 100%;
-}
 
 
 input[type=radio] {
     display: none;
 }
+.input-file {
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin-bottom: 5px;
+}
+.input-file input {
+    display: none;
+}
+.input-file .load-img {
+    background-color: gold;
+    border-radius: 3px;
+    width: 5px;
+    height: 23px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.input-file .load-img:hover {
+    width: 100%;
+}
+.input-file span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border-bottom: 2px solid;
+}
 
-label>div{
+.input-file .input-img{
+    width: 100%;
+}
+.input-file .input-img-change{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: honeydew;
+    padding: 2px 5px;
+    opacity: 0;
+}
+.input-file .input-img:hover .input-img-change{
+    opacity: 1;
+}
+.input-file img {
+    background-color: #ffff;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+.group-name>div{
     width: 100%;
     margin: 3px 0;
     padding: 1px 20px;
@@ -125,7 +166,7 @@ label>div{
     word-wrap: break-word;
 }
 
-label>div:hover{
+.group-name>div:hover{
     background: rgb(248, 252, 3);
     
 }
@@ -217,8 +258,6 @@ input[type=radio]:checked ~ div{
     overflow: auto;
     padding: 3px 0  ;
 }
-
-
 
 
 /* =========================================
@@ -371,6 +410,8 @@ loader...*/
     justify-content: center;
     margin-top: 127px; 
 }
+
+
 .lds-ellipsis {
     display: inline-block;
     position: relative;

@@ -80,11 +80,7 @@ class Menu extends React.Component {
     componentDidMount() {
         let scroll = 0;
         window.addEventListener("scroll", () => {
-            if (!this.state.isSearchInput) {
-                this.props.closeModal();
-            }
-            
-
+           
             if (!this.props.isSubContextMenuShown) {
                 this.props.closeContextMenu();
             }

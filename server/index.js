@@ -2,11 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes/routes");
 const {PORT, mongoURL} = require("./config/config");
+// const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
 require("dotenv").config();
 const cors = require("cors");
 
 const app = express();
-
+app.use(bodyParser.json({limit: "50mb"}));
 app.use(cors());
 
 app.use(express.json());
