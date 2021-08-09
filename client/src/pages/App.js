@@ -26,11 +26,12 @@ function App(props) {
             const data = await res.json();
 
             if (!res.ok) {
-                if (res.status === 400) {
+                if (data.message === "jwt expired" || data.message === "пользователь не найден") {
                     handleExit();
                 }
                 return;
-            } 
+            }
+                
             return data;
         } catch (e) {
             throw new Error(`ошибка при загрузке данных: ${e.message}`)

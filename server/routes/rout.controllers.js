@@ -104,6 +104,9 @@ class Controllers {
             if (!userId) {
                 return res.status(400).json({message: "отсутствует авторизация"});
             }
+            if (!await User.findOne({_id: userId})) {
+                return res.status(400).json({message: "пользователь не найден"})
+            }
             const data = await Words.find({owner: userId});
             if (!data.length) {
                 return res.status(400).json({message: "слова не найдены"})

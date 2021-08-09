@@ -45,21 +45,21 @@ function Auth(props) {
         }
     }
 
-    async function registration() {
+    async function registration() {   
+        setError("");
         const data = await request("/api/registr");
         if (data) {
             setResponse(`${data.message}, нажмите войти чтобы перейти на главную`)
-        }
-
+        }  
     }
 
     async function login() {
+        setError("");
         const data = await request("/api/login");
         if (data) {
             props.setToken(data.token);
             localStorage.setItem("UserToken", data.token);
         }
-
     }
 
     return (
