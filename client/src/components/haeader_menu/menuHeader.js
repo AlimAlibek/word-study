@@ -141,7 +141,7 @@ class Menu extends React.Component {
                     isCreateGropeForm={this.state.isCreateGropeForm}
                     onCreateGropeClick={this.handleCreateGropeClick}
                     onCreateGroupFormSubmit={this.props.onCreateGroupFormSubmit}
-                    
+                
                     words={this.props.words}
 
                     isMenuModalShown={this.props.isMenuModalShown}

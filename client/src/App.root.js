@@ -16,23 +16,14 @@ function AppRoot() {
 
   return (
     <>
-      
-      
       {
-        
-        // loading 
-        //   ?   <div className="loader">
-        //           <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-        //       </div>
-          
-        //   :  
+
           token 
             
             ? <App token={token} setToken={setToken} />
         
             : <Auth setToken={setToken} setLoading={setLoading} loading={loading}/>
       } 
-      
     </>
   );
 }

@@ -27,6 +27,7 @@ class Main extends React.Component {
         
         const data = await this.props.getData();
         if (data) {
+            
             this.setState({
                 words: data,
                 currentGroup: Object.keys(data)[0] 
@@ -48,7 +49,7 @@ class Main extends React.Component {
         this.setState({
             words: words
         })
-        this.props.setData(words);
+        this.props.setData({group: words[currentGroup], groupName: currentGroup});
     }
 
     handleChooseGroup(groupName) {
@@ -65,7 +66,7 @@ class Main extends React.Component {
             words: words,
             currentGroup: newGroupName
         })
-        this.props.setData(words);
+        this.props.setData({group: [], groupName: newGroupName});
     }
 
 
@@ -82,7 +83,7 @@ class Main extends React.Component {
                 currentGroup: currentGroup !== firstGroup
                     ? firstGroup : secondGroup
             })
-            this.props.setData(words);
+            this.props.setData({groupName: currentGroup});
             return;
         }
 
@@ -93,7 +94,7 @@ class Main extends React.Component {
             words: words,
             wordsIdForRemove: []
         })
-        this.props.setData(words);
+        this.props.setData({group: words[currentGroup], groupName: currentGroup});
     }
 
 
@@ -130,8 +131,7 @@ class Main extends React.Component {
             onChooseGroupe: this.handleChooseGroup,
             onCreateGroupFormSubmit: this.handleCreateGroupFormSubmit
         }
-        const propsToBody = {
-            
+        const propsToBody = {        
             words: this.state.words[this.state.currentGroup],
             group: this.state.currentGroup,
             searchText: this.state.searchText,
@@ -142,7 +142,6 @@ class Main extends React.Component {
         return (
 
             <div className='Main' >
-            
                 <Context.Provider value={{
                     deleteClick: this.handleDeleteClick,
                 }}>
@@ -151,7 +150,6 @@ class Main extends React.Component {
                         propsToBody={propsToBody}
                     />
                 </Context.Provider>
-
             </div>
 
         )

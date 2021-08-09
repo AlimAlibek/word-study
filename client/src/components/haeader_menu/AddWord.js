@@ -23,26 +23,22 @@ class AddWord extends React.Component {
     }
 
     handleImgLoad(e) {
-        if (!e.target.files.length) {
-            return;
-        }
-        const reader = new FileReader();
-
-        reader.onload = ev => {
-            this.setState({
-                img: ev.target.result
-            })
-        }
-
-        reader.readAsDataURL(e.target.files[0]);
+       this.setState({
+           img: e.target.value
+       })
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        if (this.state.imgError) {
+            const obj = this.state;
+            delete obj.imgError;
+            this.setState(obj);
+        }
         const wordObject = {
             ...this.state
         };
-
+        
         wordObject.id = this.state.word.replace(/\s/g, '$') + Date.now();
 
         if (wordObject.word.trim() && wordObject.translate.trim()) {
@@ -93,26 +89,31 @@ class AddWord extends React.Component {
                                 <div>
                                     <p><small>picture</small></p>
 
-                                    <label className="input-file">
-                                        <input
-                                            type="file"
-                                            onChange={this.handleImgLoad}
-                                            accept=".png, .jpg"
-                                        />
+                                    <div className="add-picture">
                                         {
-                                            this.state.img
-                                                ? <div className="input-img">
-                                                    <div className="input-img-change">change</div>
-                                                    <img src={this.state.img} alt="load-img" />
-                                                </div>
-
-                                                : <div className="load-img">
-                                                    <span>image</span>
-                                                </div>
-
+                                            this.state.img ?
+                                            <div className="picture-condidate">
+                                                <div 
+                                                    className="condidate-cancell" 
+                                                    onClick={() => {this.setState({img: ""})}}
+                                                >cancell</div>
+                                                <img 
+                                                    onError={() => this.setState({img: "", imgError: "wrong URL"})} 
+                                                    src={this.state.img} alt="not faund"
+                                                />
+                                            </div>
+                                            :
+                                            <textarea 
+                                                onChange={this.handleImgLoad} 
+                                                placeholder={`${
+                                                    this.state.imgError ? this.state.imgError :
+                                                    "drag a picture from the Internet here or copy and paste the URL"  
+                                                }`}
+                                            />
                                         }
+                                        
 
-                                    </label>
+                                    </div>
 
 
                                 </div>

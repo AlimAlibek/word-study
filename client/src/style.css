@@ -9,9 +9,10 @@
 /* ============================================== */
 /* Auth page */
 .Auth {
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 350px;
     margin: 0 auto;
     margin-top: 70px;
     padding: 15px 50px;
@@ -25,13 +26,22 @@
     justify-content: space-around;
     margin: 10px 0 0 0;
 }
+.Auth input {
+    height: 30px;
+    font-size: 20px;
+}
+.Auth button {
+    font-size: 16px;
+}
 
 .responseModal{
     position: absolute;
-    top: 210px;
+    left: 50%;
+    top: 165px;
     max-width: 200px;
     padding: 10px;
     border-radius: 3px;
+    transform: translate(-50%);
 }
 .Error{
     background: rgba(255, 0, 0, 0.315);
@@ -97,59 +107,48 @@ button{
     box-shadow: 1px 1px 1.5px ;
     transition: all 0.1s ease 0s;
 }
-button:hover{
-    box-shadow: none;
-    transform: translate(1px, 1px);
-}
+
 
 
 
 input[type=radio] {
     display: none;
 }
-.input-file {
+.add-picture {
     display: flex;
     width: 100%;
     position: relative;
     margin-bottom: 5px;
 }
-.input-file input {
-    display: none;
-}
-.input-file .load-img {
-    background-color: gold;
-    border-radius: 3px;
-    width: 5px;
-    height: 23px;
-    cursor: pointer;
-    transition: all .3s;
-}
-.input-file .load-img:hover {
+.add-picture textarea {
     width: 100%;
-}
-.input-file span {
-    position: absolute;
-    left: 0;
-    right: 0;
+    height: 95px;
+    margin: 3px;
+    padding: 7px;
     text-align: center;
-    border-bottom: 2px solid;
+    border: 1px dashed;
+    background: none;
+    outline: none;
+    resize: none;
+    overflow: hidden;
 }
 
-.input-file .input-img{
+
+
+.add-picture .picture-condidate{
     width: 100%;
 }
-.input-file .input-img-change{
+.add-picture .condidate-cancell{
     position: absolute;
     top: 0;
     right: 0;
     background-color: honeydew;
     padding: 2px 5px;
-    opacity: 0;
+    cursor: pointer;
 }
-.input-file .input-img:hover .input-img-change{
-    opacity: 1;
-}
-.input-file img {
+
+
+.add-picture img {
     background-color: #ffff;
     width: 100%;
     height: auto;
@@ -166,10 +165,7 @@ input[type=radio] {
     word-wrap: break-word;
 }
 
-.group-name>div:hover{
-    background: rgb(248, 252, 3);
-    
-}
+
 input[type=radio]:checked ~ div{
     border-radius: 3px;
     box-shadow: 0 0 10px 2px;
@@ -249,9 +245,7 @@ input[type=radio]:checked ~ div{
 .Menu-item :first-child{
     transition: all .3s;
 }
-.Menu-item:hover :first-child{
-    transform: translate(0, 3px);
-}
+
 
 .group-list{
     max-height: 190px;
@@ -288,13 +282,9 @@ input[type=radio]:checked ~ div{
     box-shadow: 3px 3px 5px;
     transition: all 0.2s;
 }
-.Item:hover{
-    transform: translate(2px, 2px);
-    box-shadow: none;
-    
-}
-.Item p{
-    color: rgb(0, 0, 243);
+
+.Item p {
+    color: rgb(0, 255, 128);
     font-size: 22px;
     font-weight: 600;
     margin: 10px
@@ -389,7 +379,7 @@ context menu */
 /* =========================================================== */
 @media (max-width: 510px) {
     .Main{
-        min-width: 390px;
+        min-width: 310px;
     }
     .Menu-item{
         font-size: 12px;
@@ -397,8 +387,55 @@ context menu */
     .Modal{
         width: 150px;
     }
+    .Item img {
+        height: 80px;
+    }
+    .Item p {
+        font-size: 20px;
+        margin: 6px;
+    }
 }
-
+@media (hover: hover){
+    .Menu-item:hover :first-child{
+        transform: translate(0, 3px);
+    }
+    .group-name>div:hover{
+        background: rgb(248, 252, 3); 
+    }
+    .Item:hover{
+        transform: translate(2px, 2px);
+        box-shadow: none; 
+    }
+    .add-picture .condidate-cancell {
+        opacity: 0;
+    }
+    .add-picture :hover .condidate-cancell {
+        opacity: 1;
+    }
+    button:hover{
+        box-shadow: none;
+        transform: translate(1px, 1px);
+    }
+}
+@media (hover: none) {
+    .Menu-item:active :first-child{
+        transform: translate(0, 3px);
+    }
+    .group-name>div:active{
+        background: rgb(248, 252, 3); 
+    }
+    .Item:active{
+        transform: translate(2px, 2px);
+        box-shadow: none; 
+    }
+    button:active{
+        box-shadow: none;
+        transform: translate(1px, 1px);
+    }
+    .Menu-item, .group-name, .Item, button {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    } 
+}
 
 /* ======================================================== 
 loader...*/

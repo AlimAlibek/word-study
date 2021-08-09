@@ -38,11 +38,11 @@ function App(props) {
     }
 
     function setData(data) {
-        request("https://word-study-server.herokuapp.com/api/setdata", "POST", data);
+        request("/api/setdata", "POST", data);
     }
 
     async function getData() {
-        const data = await request("https://word-study-server.herokuapp.com/api/getdata");
+        const data = await request("/api/getdata");
         return data;
     }
 

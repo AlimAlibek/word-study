@@ -31,7 +31,6 @@ class Controllers {
 
         } catch (e) {
             res.status(500).json({message: "что то пошло не так попробуйте снова"})
-            console.log(`Registr error ... ${e.message}`)
         }
         
     }
@@ -65,7 +64,6 @@ class Controllers {
 
         } catch (e) {
             res.status(500).json({message: "что-то не получилось попробуйте снова"})
-            console.log(`Login error ... ${e.message}`)
         }
         
     }
@@ -73,13 +71,21 @@ class Controllers {
 // /api/setdata    ///////////////////////////////////////////////////////////////////////
     async setdata(req, res) {
         try {
-            const data = req.body;
+            const {group, groupName} = req.body;
             const {userId} = req.user;
-            
-            const newWords = new Words({words: data, owner: userId});
-            if (await Words.findOne({owner: userId})) {
-                await Words.findOneAndUpdate({owner: userId}, {words: data});
+
+            if (await Words.findOne({owner: userId, groupName})) {
+                if (group) {
+                    await Words.findOneAndUpdate({owner: userId, groupName}, {group: group})
+                } else {
+                    await Words.findOneAndRemove({owner: userId, groupName});
+                }
+                
             } else {
+                if (!group) {
+                    return;
+                }
+                const newWords = new Words({groupName, group, owner: userId});
                 await newWords.save();
             }
 
@@ -87,7 +93,6 @@ class Controllers {
 
         } catch (e) {
             res.status(500).json({message: "ошибка сервера"})
-            console.log(`Setdata error ... ${e.message}`)
         }
         
     }
@@ -99,17 +104,24 @@ class Controllers {
             if (!userId) {
                 return res.status(400).json({message: "отсутствует авторизация"});
             }
-            const data = await Words.findOne({owner: userId});
-            if (!data) {
+            const data = await Words.find({owner: userId});
+            if (!data.length) {
                 return res.status(400).json({message: "слова не найдены"})
             }
+            
+            const groups = data.map(group => {
+                return {group: group.group, groupName: group.groupName}
+            })
 
-            res.json(data.words);
+            const groupsObj = {}
+            groups.forEach(group => {
+                groupsObj[group.groupName] = group.group;
+            })
 
+            res.json(groupsObj);
 
         } catch (e) {
             res.status(500).json({message: "ошибка сервера"})
-            console.log(`Getdata error ... ${e.message}`)
         }
         
     }
