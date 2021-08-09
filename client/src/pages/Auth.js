@@ -33,6 +33,7 @@ function Auth(props) {
 
             if (!res.ok) {
                 setError(data.message);
+                localStorage.removeItem("UserToken");
                 props.setLoading(false);
                 return;
             }
