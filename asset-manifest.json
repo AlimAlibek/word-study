@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/word-study/static/css/main.348d02e6.chunk.css",
-    "main.js": "/word-study/static/js/main.5b6b5335.chunk.js",
-    "main.js.map": "/word-study/static/js/main.5b6b5335.chunk.js.map",
+    "main.css": "/word-study/static/css/main.2e166d83.chunk.css",
+    "main.js": "/word-study/static/js/main.4704d37e.chunk.js",
+    "main.js.map": "/word-study/static/js/main.4704d37e.chunk.js.map",
     "runtime-main.js": "/word-study/static/js/runtime-main.c01a4afc.js",
     "runtime-main.js.map": "/word-study/static/js/runtime-main.c01a4afc.js.map",
     "static/js/2.69b3eb2c.chunk.js": "/word-study/static/js/2.69b3eb2c.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.e1ac5e36.chunk.js": "/word-study/static/js/3.e1ac5e36.chunk.js",
     "static/js/3.e1ac5e36.chunk.js.map": "/word-study/static/js/3.e1ac5e36.chunk.js.map",
     "index.html": "/word-study/index.html",
-    "static/css/main.348d02e6.chunk.css.map": "/word-study/static/css/main.348d02e6.chunk.css.map",
+    "static/css/main.2e166d83.chunk.css.map": "/word-study/static/css/main.2e166d83.chunk.css.map",
     "static/js/2.69b3eb2c.chunk.js.LICENSE.txt": "/word-study/static/js/2.69b3eb2c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c01a4afc.js",
     "static/js/2.69b3eb2c.chunk.js",
-    "static/css/main.348d02e6.chunk.css",
-    "static/js/main.5b6b5335.chunk.js"
+    "static/css/main.2e166d83.chunk.css",
+    "static/js/main.4704d37e.chunk.js"
   ]
 }
