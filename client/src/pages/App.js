@@ -15,7 +15,7 @@ function App(props) {
         }
 
         try {
-            const res = await fetch(url, {
+            const res = await fetch(`https://word-study-server.herokuapp.com${url}`, {
                 method,
                 headers: {
                     "Content-Type": "application/json",

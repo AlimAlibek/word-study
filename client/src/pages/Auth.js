@@ -22,7 +22,7 @@ function Auth(props) {
     async function request(url) {
         props.setLoading(true);
         try {
-            const res = await fetch(url, {
+            const res = await fetch(`https://word-study-server.herokuapp.com${url}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -39,7 +39,6 @@ function Auth(props) {
 
             props.setLoading(false);
             return data;
-
 
         } catch (e) {
             setError(`ошибка при регистрации ${e}`)
