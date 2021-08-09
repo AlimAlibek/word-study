@@ -26,7 +26,7 @@ function App(props) {
             const data = await res.json();
 
             if (!res.ok) {
-                if (data.message === "jwt expired") {
+                if (res.status === 400) {
                     handleExit();
                 }
                 return;
