@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/word-study/static/css/main.2e166d83.chunk.css",
-    "main.js": "/word-study/static/js/main.785c5215.chunk.js",
-    "main.js.map": "/word-study/static/js/main.785c5215.chunk.js.map",
+    "main.js": "/word-study/static/js/main.2a0a7781.chunk.js",
+    "main.js.map": "/word-study/static/js/main.2a0a7781.chunk.js.map",
     "runtime-main.js": "/word-study/static/js/runtime-main.c01a4afc.js",
     "runtime-main.js.map": "/word-study/static/js/runtime-main.c01a4afc.js.map",
     "static/js/2.69b3eb2c.chunk.js": "/word-study/static/js/2.69b3eb2c.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.c01a4afc.js",
     "static/js/2.69b3eb2c.chunk.js",
     "static/css/main.2e166d83.chunk.css",
-    "static/js/main.785c5215.chunk.js"
+    "static/js/main.2a0a7781.chunk.js"
   ]
 }
