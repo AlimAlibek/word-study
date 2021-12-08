@@ -1,0 +1,1 @@
+![demonstration of the application workflow](/workflow/words-gig.gif)
